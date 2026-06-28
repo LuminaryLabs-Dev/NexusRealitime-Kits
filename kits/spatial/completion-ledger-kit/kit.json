@@ -13,6 +13,11 @@
   "source": {
     "repo": "LuminaryLabs-Agents/NexusRealtime-ProtoKits",
     "path": "protokits/completion-ledger-kit/index.js",
-    "parity": "scaffolded"
+    "parity": "candidate"
+  },
+  "runtime": {
+    "api": "completionLedger",
+    "snapshot": true,
+    "reset": true
   }
 }
