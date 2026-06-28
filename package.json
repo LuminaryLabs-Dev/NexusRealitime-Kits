@@ -7,6 +7,11 @@
     ".": "./src/index.js",
     "./installer": "./installer/index.js",
     "./all": "./bundles/all.js",
+    "./default-game-stack": "./bundles/default-game-stack.js",
+    "./aerial-game-stack": "./bundles/aerial-game-stack.js",
+    "./rpg-game-stack": "./bundles/rpg-game-stack.js",
+    "./defense-game-stack": "./bundles/defense-game-stack.js",
+    "./xr-authoring-stack": "./bundles/xr-authoring-stack.js",
     "./domain-foundation": "./domains/foundation/index.js",
     "./domain-input": "./domains/input/index.js",
     "./domain-spatial": "./domains/spatial/index.js",
@@ -22,6 +27,8 @@
     "./domain-xr": "./domains/xr/index.js",
     "./domain-generic-defense": "./domains/generic-defense/index.js",
     "./domain-route-extraction": "./domains/route-extraction/index.js",
+    "./domain-project-deployment": "./domains/project-deployment/index.js",
+    "./domain-simulation": "./domains/simulation/index.js",
     "./kits/*": "./kits/*/index.js"
   },
   "peerDependencies": {
