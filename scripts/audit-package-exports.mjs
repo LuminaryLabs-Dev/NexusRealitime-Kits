@@ -8,6 +8,10 @@ for (const [exportName, target] of Object.entries(pkg.exports ?? {})) {
     audit.warn(`${exportName} uses non-string export target`);
     continue;
   }
+  if (exportName.includes("*") || target.includes("*")) {
+    audit.warn(`${exportName} uses wildcard export target ${target}; explicit exports are preferred for official kits`);
+    continue;
+  }
   const targetPath = pathFromPackageTarget(target);
   if (!exists(targetPath)) audit.error(`${exportName} points to missing file ${targetPath}`);
 }
