@@ -79,9 +79,24 @@ This is the clean rebuild foundation. The catalog, domains, bundles, installer, 
 
 Many catalog entries are currently `migration-placeholder` entries. A placeholder is installable as a metadata-only runtime kit so apps, agents, docs, and KitBuilder tooling can resolve the official domain shape before each kit's full behavior is rebuilt against ProtoKits parity.
 
+## Known Limitations
+
+This repo intentionally separates installability from implementation readiness.
+
+A cataloged kit may be metadata-installable before it has real behavior. A domain may install while most of its member kits are still placeholders. A bundle may compose domains before those domains are production-ready.
+
+See:
+
+- `KNOWN-LIMITATIONS.md`
+- `IMPLEMENTATION-GAPS.md`
+- `FAILURE-MODES.md`
+- `PLACEHOLDER-MATRIX.md`
+- `READINESS-MATRIX.md`
+- `AAA-GAP-REGISTER.md`
+
 ## Documentation Status
 
-Framework docs now cover install modes, authoring, testing, contracts, parity, domains, bundles, CDN usage, and readiness. Per-kit and per-domain docs expand as each placeholder becomes real behavior.
+Framework docs now cover install modes, authoring, testing, contracts, parity, domains, bundles, CDN usage, readiness, known limitations, implementation gaps, failure modes, and placeholder status. Per-kit and per-domain docs expand as each placeholder becomes real behavior.
 
 ## Repository Map
 
@@ -97,7 +112,7 @@ kits/            official kit landing zones and rebuilt behaviors
 parity/          ProtoKits-to-Kits parity tracking
 examples/        one-kit, one-domain, bundle, full catalog, CDN, and headless usage
 tests/           installer, contracts, domains, bundles, kits, parity, CDN, smoke
-scripts/         catalog, manifest, parity, export, and readiness checks
+scripts/         catalog, manifest, parity, export, readiness, placeholder, and gap checks
 ```
 
 ## Core Principle
@@ -110,4 +125,5 @@ The whole catalog should be installable.
 Every install should be inspectable.
 Every stable kit should be CDN-addressable.
 Every rebuilt kit should track ProtoKits parity.
+Every limitation should be visible before it causes bad assumptions.
 ```
